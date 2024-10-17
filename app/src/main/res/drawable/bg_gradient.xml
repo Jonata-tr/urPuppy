@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/background" >
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="10"
+                android:startColor="@color/primaryGradient"
+                android:centerColor="@color/secondaryGradient"
+                android:endColor="@color/thirdGradient"/>
+        </shape>
+    </item>
+
+    <item android:id="@+id/item_img">
+        <bitmap  android:src="@drawable/patinhas" android:alpha="0.3"/>
+
+    </item>
+
+</layer-list>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">urPuppy</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password">Esqueceu a sua senha?</string>
+    <string name="login">Entrar</string>
+    <string name="noAccount">Entrar sem conta</string>
+    <string name="name">Seu nome completo</string>
+    <string name="singup">Registrar-se</string>
+    <string name="title_activity_login">UrPuppy</string>
+</resources>
