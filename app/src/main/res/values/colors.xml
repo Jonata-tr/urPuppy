@@ -14,6 +14,7 @@
 
     <color name="black">#1F1F1F</color>
     <color name="hint_text">#686868</color>
+    <color name="icon_color">#59502b</color>
     <color name="gray">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

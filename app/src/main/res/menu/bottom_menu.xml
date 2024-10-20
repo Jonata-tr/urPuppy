@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:title="Home"
+        android:icon="@drawable/home" />
+
+    <item
+        android:id="@+id/bottom_pets"
+        android:title="Adotar"
+        android:icon="@drawable/pets" />
+
+    <item
+        android:id="@+id/bottom_user"
+        android:title="Preferencias"
+        android:icon="@drawable/user" />
+
+</menu>
