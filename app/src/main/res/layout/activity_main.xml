@@ -23,8 +23,11 @@
         android:background="@color/primaryYellow"
         app:itemIconTint="@color/icon_color"
         app:itemTextColor="@color/textColor"
+        app:itemTextAppearanceInactive="@style/BottomNavTextStyleInactive"
+        app:itemTextAppearanceActive="@style/BottomNavTextStyle"
         app:itemIconSize="30dp"
-        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"/>
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
