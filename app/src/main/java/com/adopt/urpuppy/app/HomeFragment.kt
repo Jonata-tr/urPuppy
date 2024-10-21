@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.adopt.urpuppy.core.auth.view.MainCallBack
 import com.adopt.urpuppy.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -35,13 +34,5 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        //Faz o _binding ficar nulo novamente, para deixar claro que aquele _binding foi "destruido"
-        _binding = null
-    }
-
 }

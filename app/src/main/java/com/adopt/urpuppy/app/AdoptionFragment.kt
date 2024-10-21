@@ -1,13 +1,13 @@
 package com.adopt.urpuppy.app
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.adopt.urpuppy.core.auth.view.MainCallBack
+import androidx.recyclerview.widget.RecyclerView
 import com.adopt.urpuppy.databinding.FragmentAdoptionBinding
+import com.adopt.urpuppy.databinding.PetsRowBinding
 
 class AdoptionFragment : Fragment() {
 
@@ -21,27 +21,35 @@ class AdoptionFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
+    ) : View{
         _binding = FragmentAdoptionBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if(context is MainCallBack){
-            adoptionCallBack = context
-        }
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // TODO: PRA TODO UNS TRECO AI
+
+        val inboxAdapter = InboxAdapter()
+        binding.petsList.adapter = inboxAdapter
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        //Faz o _binding ficar nulo novamente, para deixar claro que aquele _binding foi "destruido"
-        _binding = null
+    private inner class InboxAdapter: RecyclerView.Adapter<InboxAdapter.RowView>() {
+        private inner class RowView(view:  PetsRowBinding): RecyclerView.ViewHolder(view.root)
+
+        //Cria o
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowView {
+            val view = PetsRowBinding.inflate(layoutInflater, parent, false)
+            return RowView(view)
+        }
+
+        //Quantidade de rows que serão renderizados
+        override fun getItemCount(): Int {
+            return 16
+        }
+
+        override fun onBindViewHolder(holder: RowView, position: Int) {
+            //TOD("Not yet implemented")
+        }
     }
 
 }

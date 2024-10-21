@@ -4,6 +4,7 @@
     <color name="primaryTest">#ffeda5</color>
     <color name="secondaryYellow">#f6f2e1</color>
     <color name="thirdYellow">#B3B3B0</color>
+    <color name="toolbar">#fade70</color>
 
     <color name="primaryGradient">#FFE780</color>
     <color name="secondaryGradient">#FBDF8F</color>
@@ -14,6 +15,7 @@
 
     <color name="black">#1F1F1F</color>
     <color name="hint_text">#686868</color>
+    <color name="bg_white_yellow">#f6f2e1</color>
     <color name="icon_color">#59502b</color>
     <color name="gray">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
