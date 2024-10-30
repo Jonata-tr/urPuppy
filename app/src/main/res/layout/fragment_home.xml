@@ -186,7 +186,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/abrigoum"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
 
@@ -195,7 +195,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/abrigotres"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
 
@@ -204,7 +204,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/abrigoquatro"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
 
@@ -278,7 +278,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/clinicatres"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
                        <ImageButton
@@ -286,7 +286,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/clinicadois"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
                        <ImageButton
@@ -294,7 +294,7 @@
                            android:layout_width="169dp"
                            android:layout_height="149dp"
                            android:layout_marginRight="10dp"
-                           android:background="@drawable/abrigo"
+                           android:background="@drawable/clinicaquatro"
                            tools:layout_editor_absoluteX="16dp"
                            tools:layout_editor_absoluteY="304dp" />
                        <ImageButton
@@ -370,13 +370,13 @@
                        <ImageView
                            android:layout_width="match_parent"
                            android:layout_height="200dp"
-                           android:src="@drawable/desgracadinho" />
+                           android:src="@drawable/gatopelado" />
 
                        <TextView
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
                            android:background="@color/white"
-                           android:text="hdfbwhdbfwhebfhwebvfjhdebcjhwvbfcuwvechwvechgwveiucgvwehcbwebcuwegvdbchjdbcjwhechjwebchwev"
+                           android:text="Como o modismo está criando raças de gatos “mutantes”"
                            android:textAlignment="center"
                            android:textSize="15sp" />
                    </LinearLayout>

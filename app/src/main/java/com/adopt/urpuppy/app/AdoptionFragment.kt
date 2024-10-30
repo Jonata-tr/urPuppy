@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.adopt.urpuppy.R
 import com.adopt.urpuppy.databinding.FragmentAdoptionBinding
-import com.adopt.urpuppy.databinding.PetsRowBinding
+import com.adopt.urpuppy.puppysData.PuppyAdapter
+import com.adopt.urpuppy.puppysData.PuppysDataClass
 
 class AdoptionFragment : Fragment() {
 
@@ -17,39 +19,104 @@ class AdoptionFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var adoptionCallBack : MainCallBack //Cria uma variavel chamada adoptioncall back que sera do tipo Maincallback
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var puppyList: ArrayList<PuppysDataClass>
+    lateinit var puppyImage:Array<Int>
+    lateinit var puppyName:Array<String>
+    lateinit var puppyRace:Array<String>
+    lateinit var puppyAge:Array<String>
+    lateinit var puppySex:Array<String>
+    lateinit var puppyLocation:Array<String>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) : View{
-        _binding = FragmentAdoptionBinding.inflate(inflater, container, false)
+
+        _binding = FragmentAdoptionBinding.inflate(inflater,  container, false)
+
+        puppyImage = arrayOf(
+            R.drawable.desgracadinho,
+            R.drawable.dog1,
+            R.drawable.dog2,
+            R.drawable.dog3,
+            R.drawable.dog4,
+            R.drawable.dog5,
+
+        )
+
+        puppyName = arrayOf(
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+
+        )
+        puppySex = arrayOf(
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+
+        )
+        puppyLocation = arrayOf(
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+            "Aleatorio",
+
+        )
+        puppyAge = arrayOf(
+            "3 meses",
+            "1 ano",
+            "2 anos",
+            "4 meses",
+            "3 meses",
+            "1 ano",
+        )
+
+        puppyRace = arrayOf(
+            "aleatorio",
+            "aleatorio",
+            "aleatorio",
+            "aleatorio",
+            "aleatorio",
+            "aleatorio",
+        )
+
+
+        recyclerView = binding.petsList
+        recyclerView.setHasFixedSize(true)
+        puppyList = arrayListOf<PuppysDataClass>()
+        getDogData()
+
         return binding.root
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val inboxAdapter = InboxAdapter()
-        binding.petsList.adapter = inboxAdapter
+    private fun getDogData() {
+        for (i in puppyImage.indices) {
+            val dataClass = PuppysDataClass(
+                puppyImage[i],
+                puppyName[i],
+                puppyAge[i],
+                puppyLocation[i],
+                puppySex[i],
+                puppyRace[i],
+            )
+            puppyList.add(dataClass)
+        }
+
+        recyclerView.adapter = PuppyAdapter(puppyList)
     }
 
-    private inner class InboxAdapter: RecyclerView.Adapter<InboxAdapter.RowView>() {
-        private inner class RowView(view:  PetsRowBinding): RecyclerView.ViewHolder(view.root)
-
-        //Cria o
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowView {
-            val view = PetsRowBinding.inflate(layoutInflater, parent, false)
-            return RowView(view)
-        }
-
-        //Quantidade de rows que serão renderizados
-        override fun getItemCount(): Int {
-            return 16
-        }
-
-        override fun onBindViewHolder(holder: RowView, position: Int) {
-            //TOD("Not yet implemented")
-        }
-    }
 
 }

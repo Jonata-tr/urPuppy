@@ -5,18 +5,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="20dp"
+    android:paddingHorizontal="18dp"
     android:paddingVertical="10dp"
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="16dp"
-    android:layout_marginBottom="24dp"
+    android:layout_marginBottom="10dp"
     android:background="@drawable/pet_button"
     android:id="@+id/pets_row_item">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/dogImage"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="240dp"
         android:src="@drawable/desgracadinho"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/left_corners_rounded"
@@ -34,55 +34,52 @@
         tools:layout_editor_absoluteY="195dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/dogName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Trovão"
             android:textColor="@color/black"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_btn"
+            android:id="@+id/adoptTheDog"
             style="@style/ShapeAppearanceOverlay.Material3.Button"
             android:layout_width="161dp"
             android:layout_height="37dp"
-            android:paddingHorizontal="25dp"
             android:background="@drawable/button_bg_primary"
+            android:drawableLeft="@drawable/pets"
 
+            android:drawableTint="@color/white"
+            android:paddingHorizontal="25dp"
             android:text="Levar pra casa"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:drawableLeft="@drawable/pets"
-            android:drawableTint="@color/white"
             app:backgroundTint="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.74"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/dogName"
+            app:layout_constraintTop_toTopOf="@+id/dogName" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.176">
+            app:layout_constraintStart_toStartOf="@+id/dogName"
+            app:layout_constraintTop_toBottomOf="@+id/dogName">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Raça:"
                 android:textColor="@color/textColor"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <Space
@@ -90,10 +87,11 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/dogRace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pug"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -101,18 +99,18 @@
             android:layout_width="wrap_content"
 
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.387"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout">
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/adoptTheDog"
+            app:layout_constraintTop_toBottomOf="@+id/adoptTheDog">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Gênero:"
                 android:textColor="@color/textColor"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Space
@@ -120,10 +118,11 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/dogSex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Macho" />
+                android:text="Macho"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,19 +130,20 @@
             android:layout_width="wrap_content"
 
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
             android:gravity="end"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="1.0">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Idade:"
                 android:textColor="@color/textColor"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <Space
@@ -151,10 +151,11 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/dogAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="3 meses" />
+                android:text="3 meses"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -165,9 +166,9 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
             app:layout_constraintVertical_bias="1.0">
 
             <TextView
@@ -175,18 +176,19 @@
                 android:layout_height="match_parent"
                 android:text="Residencia:"
                 android:textColor="@color/textColor"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="6dp"
-                android:layout_height="0dp" />
+                android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/adoptionLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Morro da catita" />
+                android:text="Morro da catita"
+                android:textColor="@color/black" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
