@@ -1,5 +1,6 @@
 package com.adopt.urpuppy.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,11 +23,11 @@ class AdoptionFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var puppyList: ArrayList<PuppysDataClass>
     lateinit var puppyImage:Array<Int>
-    lateinit var puppyName:Array<String>
-    lateinit var puppyRace:Array<String>
-    lateinit var puppyAge:Array<String>
-    lateinit var puppySex:Array<String>
-    lateinit var puppyLocation:Array<String>
+    private lateinit var puppyName:Array<String>
+    private lateinit var puppyRace:Array<String>
+    private lateinit var puppyAge:Array<String>
+    private lateinit var puppySex:Array<String>
+    private lateinit var puppyLocation:Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -101,7 +102,6 @@ class AdoptionFragment : Fragment() {
 
     }
 
-
     private fun getDogData() {
         for (i in puppyImage.indices) {
             val dataClass = PuppysDataClass(
@@ -114,9 +114,21 @@ class AdoptionFragment : Fragment() {
             )
             puppyList.add(dataClass)
         }
+        val adapter = PuppyAdapter(puppyList)
+        recyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : PuppyAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
 
-        recyclerView.adapter = PuppyAdapter(puppyList)
+                val intent = Intent(context, DetailedDescription::class.java)
+                intent.putExtra("petImage", puppyList[position].puppyImage)
+                intent.putExtra("petName", puppyList[position].puppyName)
+                intent.putExtra("petSex", puppyList[position].puppySex)
+                intent.putExtra("petLocation", puppyList[position].puppyLocation)
+                intent.putExtra("petAge", puppyList[position].puppyAge)
+                intent.putExtra("petRace", puppyList[position].puppyRace)
+
+                startActivity(intent)
+            }
+        })
     }
-
-
 }

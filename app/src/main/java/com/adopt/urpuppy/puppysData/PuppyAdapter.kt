@@ -3,6 +3,7 @@ package com.adopt.urpuppy.puppysData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,9 +11,19 @@ import com.adopt.urpuppy.R
 
 class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerView.Adapter<PuppyAdapter.ViewHolder>() {
 
+    private lateinit var mListener: OnItemClickListener
+
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener){
+        mListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.pets_row, parent, false)
-        return ViewHolder(itemView)
+        return ViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -29,12 +40,21 @@ class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerV
         return puppyList.size
     }
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, listener: OnItemClickListener): RecyclerView.ViewHolder(itemView) {
         val rvDogImage:ImageView = itemView.findViewById(R.id.dogImage)
         val rvDogName:TextView = itemView.findViewById(R.id.dogName)
         val rvDogAge:TextView = itemView.findViewById(R.id.dogAge)
         val rvDogSex:TextView = itemView.findViewById(R.id.dogSex)
         val rvDogLocation:TextView = itemView.findViewById(R.id.adoptionLocation)
         val rvDogRace:TextView = itemView.findViewById(R.id.dogRace)
+        var petButton: Button = itemView.findViewById(R.id.adoptThePet)
+
+        //I
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
+
 }

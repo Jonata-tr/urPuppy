@@ -18,5 +18,6 @@
     <color name="bg_white_yellow">#f6f2e1</color>
     <color name="icon_color">#59502b</color>
     <color name="gray">#2C2C2C</color>
+    <color name="ligth_gray">#BABABA</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

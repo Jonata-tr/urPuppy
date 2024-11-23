@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white_yellow"
+    android:orientation="vertical"
+    tools:context=".app.DetailedDescription">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/img_border"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/desgracadinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/dogImage"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="144dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/dog1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:shapeAppearanceOverlay="@style/rounded"
+        app:strokeColor="@color/primaryYellow"
+        app:strokeWidth="6dp" />
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@color/thirdYellow"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:text="pet name"
+        android:textColor="@color/textColor"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dogImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".app.PreferencesFragment"
+    android:background="@color/bg_white_yellow"
+    android:fillViewport="true"
+    android:layout_marginTop="52dp"
     android:layout_marginBottom="52dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meu perfil"
+                android:paddingHorizontal="20dp"
+                android:textSize="32sp"
+                android:textColor="@color/textColor"
+                android:gravity="left"
+                android:layout_marginTop="24dp" />
+            <View
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginBottom="20dp"
+                />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="PREFERECES PAGE CARAIII"
-        android:textSize="50sp"
-        android:textColor="@color/primaryYellow"
-        android:gravity="center"/>
 
-</FrameLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_info_area"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="10dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/perfil_background_card">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/dogImage"
+                    android:padding="10dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/rounded"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="3dp" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Nome do usuario"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/dogImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Endereço do usuario"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dogImage"
+                    app:layout_constraintTop_toBottomOf="@+id/user_name"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preferencias"
+                    android:textSize="32sp"
+                    android:textColor="@color/textColor"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"
+                    android:layout_marginBottom="20dp"
+                    />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/user_data_option"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="8dp"
+
+                    android:drawableLeft="@drawable/user_info_icon"
+                    android:text="Dados da conta"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/user_orders_option"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="8dp"
+
+                    android:drawableLeft="@drawable/order_icon"
+                    android:text="Meus pedidos"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/user_fav_option"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:drawableLeft="@drawable/baseline_favorite_24"
+                    android:text="Meus favoritos"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:background="@color/gray" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/options"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"
+
+                    android:drawableLeft="@drawable/settings_icon"
+                    android:text="Configurações do app"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/help_option"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="8dp"
+
+                    android:drawableLeft="@drawable/help_icon"
+                    android:text="Ajuda ou duvidas"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/user_feedback_option"
+                    style="@style/ShapeAppearanceOverlay.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="16dp"
+
+                    android:drawableLeft="@drawable/sugestions_icon"
+                    android:text="Sugestões"
+                    android:textAlignment="textStart"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/thirdYellow"
+                    app:cornerRadius="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+</ScrollView>
