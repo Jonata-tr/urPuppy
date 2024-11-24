@@ -10,6 +10,7 @@ acervo de dados de animais que estão no aguardo de serem adotados
 
 
 <h1>Objetivo<\h1>
+  
 Facilitar e melhorar o processo de adoção de animais em estado de abandono ou que
 não possuem uma familia, o app visa trazer uma maior facilidade para que os moradores
 da cidade consigam adquirir informações sobre esses animais de forma pratica e rapida,
