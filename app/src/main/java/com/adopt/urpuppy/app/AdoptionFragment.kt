@@ -48,14 +48,16 @@ class AdoptionFragment : Fragment() {
         )
 
         puppyName = arrayOf(
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
+            "Trovão",
+            "Darth Vader",
+            "Gigante",
+            "Algodão",
             "Aleatorio",
             "Aleatorio",
 
         )
+
+        //O sexo ta invertido com a localização sabe deus por que
         puppySex = arrayOf(
             "Aleatorio",
             "Aleatorio",
@@ -63,16 +65,15 @@ class AdoptionFragment : Fragment() {
             "Aleatorio",
             "Aleatorio",
             "Aleatorio",
-
         )
         puppyLocation = arrayOf(
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
 
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea"
         )
         puppyAge = arrayOf(
             "3 meses",
@@ -82,13 +83,12 @@ class AdoptionFragment : Fragment() {
             "3 meses",
             "1 ano",
         )
-
         puppyRace = arrayOf(
-            "aleatorio",
-            "aleatorio",
-            "aleatorio",
-            "aleatorio",
-            "aleatorio",
+            "Cristão",
+            "Catolico",
+            "Candoble",
+            "Mason",
+            "Mormon",
             "aleatorio",
         )
 
@@ -112,6 +112,7 @@ class AdoptionFragment : Fragment() {
                 puppySex[i],
                 puppyRace[i],
             )
+
             puppyList.add(dataClass)
         }
         val adapter = PuppyAdapter(puppyList)
@@ -119,12 +120,11 @@ class AdoptionFragment : Fragment() {
         adapter.setOnItemClickListener(object : PuppyAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
 
-                val intent = Intent(context, DetailedDescription::class.java)
+                val intent = Intent(this@AdoptionFragment.requireContext(), DetailedDescription::class.java)
                 intent.putExtra("petImage", puppyList[position].puppyImage)
                 intent.putExtra("petName", puppyList[position].puppyName)
-                intent.putExtra("petSex", puppyList[position].puppySex)
-                intent.putExtra("petLocation", puppyList[position].puppyLocation)
                 intent.putExtra("petAge", puppyList[position].puppyAge)
+                intent.putExtra("petSex", puppyList[position].puppySex)
                 intent.putExtra("petRace", puppyList[position].puppyRace)
 
                 startActivity(intent)

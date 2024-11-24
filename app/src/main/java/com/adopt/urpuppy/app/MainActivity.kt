@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 //Define um conjunto de metodos/funções, onde classes podem implementar ou não suas funções
 interface MainCallBack {
     fun loadNavigation(fragment: Fragment)
-    fun onLoginReturn()
+    fun onPageReturnFragment()
 }
 
 class MainActivity : AppCompatActivity(), MainCallBack {
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(), MainCallBack {
 
     }
 
-    override fun onLoginReturn() {
+    override fun onPageReturnFragment() {
         supportFragmentManager.popBackStack() //Remove o fragmento atual da pilha de atividades
     }
 

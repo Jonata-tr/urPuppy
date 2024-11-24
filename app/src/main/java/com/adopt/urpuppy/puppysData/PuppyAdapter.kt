@@ -3,7 +3,6 @@ package com.adopt.urpuppy.puppysData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -34,6 +33,10 @@ class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerV
         holder.rvDogSex.text = currentItem.puppySex
         holder.rvDogLocation.text = currentItem.puppyLocation
         holder.rvDogRace.text = currentItem.puppyRace
+
+        if(currentItem.puppyAge == "3 meses"){
+           currentItem
+        }
     }
 
     override fun getItemCount(): Int {
@@ -47,9 +50,8 @@ class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerV
         val rvDogSex:TextView = itemView.findViewById(R.id.dogSex)
         val rvDogLocation:TextView = itemView.findViewById(R.id.adoptionLocation)
         val rvDogRace:TextView = itemView.findViewById(R.id.dogRace)
-        var petButton: Button = itemView.findViewById(R.id.adoptThePet)
 
-        //I
+        //Constructor do kotlin
         init {
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)

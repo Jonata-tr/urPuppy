@@ -3,7 +3,7 @@
     <color name="primaryYellow">#f9e288</color>
     <color name="primaryTest">#ffeda5</color>
     <color name="secondaryYellow">#f6f2e1</color>
-    <color name="thirdYellow">#FFE98B</color>
+    <color name="thirdYellow">#CAB864</color>
     <color name="toolbar">#fade70</color>
 
     <color name="primaryGradient">#FFE780</color>
@@ -12,6 +12,9 @@
 
     <color name="inputBorder">#ffda47</color>
     <color name="textColor">#1F1901</color>
+    <color name="semi_transparent">#26000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="fav_bg">#F6CBCB</color>
 
     <color name="black">#1F1F1F</color>
     <color name="hint_text">#686868</color>

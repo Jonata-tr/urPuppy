@@ -1,7 +1,7 @@
 package com.adopt.urpuppy.app
 
-import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.adopt.urpuppy.databinding.ActivityPetDescriptionBinding
@@ -14,12 +14,30 @@ class DetailedDescription : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityPetDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val petImage: ImageView = binding.petPerfil
+        val petImageBg: ImageView = binding.descPerfilBg
+
+
+        val bundle: Bundle? = intent.extras
+        val image = bundle!!.getInt("petImage")
+        val name = bundle.getString("petName")
+        val sex = bundle.getString("petSex")
+        val age = bundle.getString("petAge")
+        val race = bundle.getString("petRace")
+
+        petImage.setImageResource(image)
+        petImage.scaleType = ImageView.ScaleType.FIT_CENTER
+        petImageBg.setImageResource(image )
+        binding.descPetName.text = name
+        binding.petRace.text = race
+        binding.petSex.text = sex
+        binding.petAge.text = age
+
+
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 
-    private fun getPetDescriptionPage(){
-        val intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(intent)
-        finish()
-    }
 }
