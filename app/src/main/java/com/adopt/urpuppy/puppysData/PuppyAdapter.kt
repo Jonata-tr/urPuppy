@@ -31,12 +31,9 @@ class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerV
         holder.rvDogName.text = currentItem.puppyName
         holder.rvDogAge.text = currentItem.puppyAge
         holder.rvDogSex.text = currentItem.puppySex
-        holder.rvDogLocation.text = currentItem.puppyLocation
+        holder.rvPetSize.text = currentItem.puppyLocation
         holder.rvDogRace.text = currentItem.puppyRace
 
-        if(currentItem.puppyAge == "3 meses"){
-           currentItem
-        }
     }
 
     override fun getItemCount(): Int {
@@ -48,7 +45,7 @@ class PuppyAdapter(private val puppyList: ArrayList<PuppysDataClass>): RecyclerV
         val rvDogName:TextView = itemView.findViewById(R.id.dogName)
         val rvDogAge:TextView = itemView.findViewById(R.id.dogAge)
         val rvDogSex:TextView = itemView.findViewById(R.id.dogSex)
-        val rvDogLocation:TextView = itemView.findViewById(R.id.adoptionLocation)
+        val rvPetSize:TextView = itemView.findViewById(R.id.petSize)
         val rvDogRace:TextView = itemView.findViewById(R.id.dogRace)
 
         //Constructor do kotlin

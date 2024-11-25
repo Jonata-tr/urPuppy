@@ -10,9 +10,10 @@ data class PuppysDataClass(
     var puppySex: String,
     var puppyLocation: String,
     var puppyRace: String,
+    var petDescription: String,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(parcel.readInt(), parcel.readString().toString(), parcel.readString().toString(),
-        parcel.readString().toString(), parcel.readString().toString(), parcel.readString().toString()
+        parcel.readString().toString(), parcel.readString().toString(), parcel.readString().toString(), parcel.readString().toString()
     ) {
     }
 
@@ -23,6 +24,7 @@ data class PuppysDataClass(
         parcel.writeString(puppySex)
         parcel.writeString(puppyLocation)
         parcel.writeString(puppyRace)
+        parcel.writeString(petDescription)
     }
 
     override fun describeContents(): Int {

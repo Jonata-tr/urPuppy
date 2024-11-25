@@ -22,12 +22,13 @@ class AdoptionFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var puppyList: ArrayList<PuppysDataClass>
-    lateinit var puppyImage:Array<Int>
+    private lateinit var puppyImage:Array<Int>
     private lateinit var puppyName:Array<String>
     private lateinit var puppyRace:Array<String>
     private lateinit var puppyAge:Array<String>
-    private lateinit var puppySex:Array<String>
-    private lateinit var puppyLocation:Array<String>
+    private lateinit var petSize:Array<String>
+    private lateinit var petSex:Array<String>
+    private lateinit var petDescription:Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,41 +40,103 @@ class AdoptionFragment : Fragment() {
 
         puppyImage = arrayOf(
             R.drawable.desgracadinho,
+
+            R.drawable.gato1, //2
+
             R.drawable.dog1,
             R.drawable.dog2,
-            R.drawable.dog3,
+
+            R.drawable.gato2,//5
+            R.drawable.gato3,
+
+            R.drawable.mel, //Botar o da mel aq
+
+            R.drawable.gato4,//8
+            R.drawable.gato5,
+
             R.drawable.dog4,
             R.drawable.dog5,
 
-        )
+            R.drawable.gato6,//12
+
+            R.drawable.dog6,
+            R.drawable.dog1,
+
+            R.drawable.gato7,//15
+
+            R.drawable.dog7,
+
+            R.drawable.gata,//17
+            R.drawable.symon,
+            R.drawable.gato,
+
+            )
 
         puppyName = arrayOf(
             "Trovão",
-            "Darth Vader",
+            "Neve",
             "Gigante",
             "Algodão",
-            "Aleatorio",
-            "Aleatorio",
+            "Spook",
+            "Lennon",
+            "Mel", //Dog6 é a mel
+            "Youtube",
+            "Twitter",
+            "Pulga", //
+            "Rebaixado",
+            "Maya",
+            "Marley",
+            "Zeca",
+            "Tobby",
+            "Chule",
+            "Gata",
+            "Symon",
+            "Minecraft",
+            )
 
+        //O sexo ta invertido com a localização, ajeitar depois
+        petSize = arrayOf(
+            "Pequeno",
+            "Pequeno",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "pequeno",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
         )
-
-        //O sexo ta invertido com a localização sabe deus por que
-        puppySex = arrayOf(
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-            "Aleatorio",
-        )
-        puppyLocation = arrayOf(
-
+        petSex = arrayOf(
             "Macho",
             "Femea",
             "Macho",
             "Femea",
             "Macho",
-            "Femea"
+            "Femea",
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea",
+            "Macho",
+            "Femea",
+            "Femea",
+            "Macho",
+            "Macho",
         )
         puppyAge = arrayOf(
             "3 meses",
@@ -82,14 +145,120 @@ class AdoptionFragment : Fragment() {
             "4 meses",
             "3 meses",
             "1 ano",
+            "5 anos",
+            "6 meses",
+            "3 anos",
+            "6 anos",
+            "1 ano",
+            "5 anos",
+            "3 anos",
+            "3 anos",
+            "6 anos",
+            "1 ano",
+            "5 anos",
+            "6 meses",
+            "3 anos",
+            "6 anos"
         )
         puppyRace = arrayOf(
-            "Cristão",
-            "Catolico",
-            "Candoble",
+            "Indefinido",
+            "Indefinido",
+            "Golden",
             "Mason",
             "Mormon",
-            "aleatorio",
+            "Indefinido",
+            "Caramelo",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+            "Indefinido",
+
+        )
+
+        petDescription = arrayOf(
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
+            "Ele é daqueles que adora seguir você pela casa, como se dissesse: \"Estou aqui " + "para o que precisar!\". Embora seja um excelente cão de guarda, ele tem um lado doce e travesso: ama correr atrás de bolinhas e buscar gravetos no parque. Seus olhos atentos e focados se iluminam toda vez que alguém pega uma coleira, pronto para explorar o mundo ao seu lado. Thor é leal, protetor e um amigo para todas as horas.",
+
+            "Ela ama carinhos na barriga e pode passar horas deitada ao seu lado, apenas aproveitando sua companhia. Mas não se engane! Quando ela " +
+                    "vê uma trilha ou um espaço aberto, seu espírito aventureiro desperta. Ela é perfeita para quem busca um equilíbrio entre " +
+                    "tranquilidade e diversão. Com ela, cada dia é uma nova oportunidade para explorar e se conectar.",
+
+
         )
 
 
@@ -108,9 +277,10 @@ class AdoptionFragment : Fragment() {
                 puppyImage[i],
                 puppyName[i],
                 puppyAge[i],
-                puppyLocation[i],
-                puppySex[i],
+                petSex[i],
+                petSize[i],
                 puppyRace[i],
+                petDescription[i],
             )
 
             puppyList.add(dataClass)
@@ -126,6 +296,7 @@ class AdoptionFragment : Fragment() {
                 intent.putExtra("petAge", puppyList[position].puppyAge)
                 intent.putExtra("petSex", puppyList[position].puppySex)
                 intent.putExtra("petRace", puppyList[position].puppyRace)
+                intent.putExtra("petDescription", petDescription[position])
 
                 startActivity(intent)
             }

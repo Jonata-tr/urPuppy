@@ -116,7 +116,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -132,7 +132,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -148,7 +148,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
 
                 <View
@@ -171,7 +171,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/help_option"
@@ -186,7 +186,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/user_feedback_option"
@@ -201,7 +201,7 @@
 
                     android:textColor="@color/textColor"
                     android:textSize="14sp"
-                    app:backgroundTint="@color/thirdYellow"
+                    app:backgroundTint="@color/thirdGradient"
                     app:cornerRadius="16dp" />
 
             </LinearLayout>

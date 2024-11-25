@@ -25,14 +25,16 @@ class DetailedDescription : AppCompatActivity() {
         val sex = bundle.getString("petSex")
         val age = bundle.getString("petAge")
         val race = bundle.getString("petRace")
+        val desc = bundle.getString("petDescription")
 
         petImage.setImageResource(image)
-        petImage.scaleType = ImageView.ScaleType.FIT_CENTER
+        petImage.scaleType = ImageView.ScaleType.CENTER_CROP
         petImageBg.setImageResource(image )
         binding.descPetName.text = name
         binding.petRace.text = race
         binding.petSex.text = sex
         binding.petAge.text = age
+        binding.petDescription.text = desc
 
 
         binding.toolbar.setNavigationOnClickListener {
